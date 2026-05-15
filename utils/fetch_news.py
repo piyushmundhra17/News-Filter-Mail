@@ -1,17 +1,12 @@
-import json
-import dotenv
 import requests
 import os
+import dotenv
+import json
 
 dotenv.load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 
-
-with open("config/keywords.json") as f:
-    data = json.load(f)
-
-keywords = data["keywords"]
 
 def fetch_news(keywords):
     url = "https://newsdata.io/api/1/market"
@@ -36,6 +31,4 @@ def fetch_news(keywords):
             title=article.get("title")
             link=article.get("link")
             description=article.get("description")
-            print(f"Title: {title}\nLink: {link}\nDescription: {description}\n\n")    
-
-fetch_news(keywords)    
+            print(f"Title: {title}\nLink: {link}\nDescription: {description}\n\n")
