@@ -1,7 +1,7 @@
 import json
 import requests
 import os
-from utils.fetch_news import fetch_news
+from utils.fetchnews import fetch_news
 
 
 with open("config/keywords.json") as f:
